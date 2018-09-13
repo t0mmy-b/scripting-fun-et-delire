@@ -1,5 +1,7 @@
 from random import randrange as r
 from time import sleep as ts
+import os
+
 ascii_art = "ooooooddooodddddddddddddddddddddxdddxxxxdoccc:::::;;;;;;;;;;;;coxkxdoc:;'...',,;;::::,....,;;;;;,,,,;coooooooooooooooodxocclc'.,:c::::;,,;,,''.............................';:lo:clllllodOXWWMMMMMMMMMMMMMMMMMWMWNWWMMMMWNXXNNNWNK0XWWMMWWWMMMMMMMMMMMMMMMMWNKOxl;,:oxO0KNWMMMMMMMWN0Oxdoolllccccc:::::::;;;" \
 "oooooooooooooooddddddddddddddddddddddddddoc:::::;;;;;;;;;;;:::loxxxddddoc;,,:loolc::cc:'..............:looooooooooooldxdl:;;;;;;::::::;;;,'.................................':ccccc::clcldOOxdkkO0KXXXNNNNNNNNNNNNNXXXXKKKK00OOOkkO0kxxxxxxxxxxxxxxxxxxxxxxoc:;,'.',;:cldk0KXXNNNXX0kxdoolllcccc::::::::;;;;" \
 "oooooooooooooooooodddddddddddddddddddddddoc::::;;;;;;;;;;;::cllodddooxO0Oxdoodxxxxdxxdo:...............,looooooooooooddoo:;;:::;;::c:,''....................................','':c;;;;:cclloolc;'',;;::::ccccccoxdc:::;;,,,,'''',:c;.................''...........',,;;:cloddxxxxdxxdoollllccccc:::::::::;;;" \
@@ -123,3 +125,4 @@ while 1:
 	if c == len(colors):
 		c = 0
 	ts(0.1)
+	os.system('clear')
