@@ -119,7 +119,8 @@ ascii_art = "ooooooddooodddddddddddddddddddddxdddxxxxdoccc:::::;;;;;;;;;;;;coxkx
 
 c = 0
 colors = ['\033[97m','\033[96m','\033[95m','\033[94m','\033[93m','\033[92m','\033[91m']
-music = ""
+music = "NyanCatoriginal.mp3"
+os.system("start "+music)
 while 1:
 	print("\033[1m"+colors[c]+ascii_art)
 	c += 1
