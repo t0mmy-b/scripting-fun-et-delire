@@ -1,7 +1,6 @@
 from random import randrange as r
 from time import sleep as ts
 import os
-import requests
 
 ascii_art = "ooooooddooodddddddddddddddddddddxdddxxxxdoccc:::::;;;;;;;;;;;;coxkxdoc:;'...',,;;::::,....,;;;;;,,,,;coooooooooooooooodxocclc'.,:c::::;,,;,,''.............................';:lo:clllllodOXWWMMMMMMMMMMMMMMMMMWMWNWWMMMMWNXXNNNWNK0XWWMMWWWMMMMMMMMMMMMMMMMWNKOxl;,:oxO0KNWMMMMMMMWN0Oxdoolllccccc:::::::;;;" \
 "oooooooooooooooddddddddddddddddddddddddddoc:::::;;;;;;;;;;;:::loxxxddddoc;,,:loolc::cc:'..............:looooooooooooldxdl:;;;;;;::::::;;;,'.................................':ccccc::clcldOOxdkkO0KXXXNNNNNNNNNNNNNXXXXKKKK00OOOkkO0kxxxxxxxxxxxxxxxxxxxxxxoc:;,'.',;:cldk0KXXNNNXX0kxdoolllcccc::::::::;;;;" \
@@ -119,8 +118,6 @@ ascii_art = "ooooooddooodddddddddddddddddddddxdddxxxxdoccc:::::;;;;;;;;;;;;coxkx
 
 c = 0
 colors = ['\033[97m','\033[96m','\033[95m','\033[94m','\033[93m','\033[92m','\033[91m']
-music = "NyanCatoriginal.mp3"
-os.system("start "+music)
 while 1:
 	print("\033[1m"+colors[c]+ascii_art)
 	c += 1
