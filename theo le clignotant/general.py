@@ -1,3 +1,5 @@
+#-*-coding: utf-8-*-
+
 from random import randrange as r
 from time import sleep as ts
 import os
