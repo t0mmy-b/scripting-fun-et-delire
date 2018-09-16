@@ -2,6 +2,7 @@
 
 import time
 import getpass
+import random
 from Quartz.CoreGraphics import CGEventCreateKeyboardEvent
 from Quartz.CoreGraphics import CGEventPost
 from Quartz.CoreGraphics import kCGHIDEventTap
@@ -214,6 +215,9 @@ class Keyboard:
 
 class Program:
     def __init__(self):
+        global passwd
+        global tmp
+
         passwd = "1111"
         tmp = "0000"
         while passwd != tmp:
@@ -221,15 +225,24 @@ class Program:
             tmp = str(getpass.getpass("Confirmation du mot de passe: "))
             if passwd != tmp:
                 print("Les mots de passe ne correspondent pas.")
-        self.screenLock()
-        time.sleep(5)
-        self.screenUnlock(passwd)
+        self.loop()
+
+    def loop(self):
+        loopTime = random.randrange(1200,2100)
+        while 1:
+            self.screenLock()
+            time.sleep(loopTime)
+            self.screenUnlock(passwd)
+            time.sleep(3)
+
     def screenUnlock(self,passwd):
         Keyboard().KeyPress('\n')
         time.sleep(0.2)
         Keyboard().Type(passwd)
         time.sleep(0.0001)
         Keyboard().KeyPress('\n')
+
+
     def screenLock(self):
         appleScript = '''
             on run {input, parameters}
@@ -238,4 +251,6 @@ class Program:
         args = ['2', '2']
         p = Popen(['osascript', '-'] + args, stdin=PIPE, stdout=PIPE, stderr=PIPE)
         stdout, stderr = p.communicate(appleScript)
+
+
 Program()
