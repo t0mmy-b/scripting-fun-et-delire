@@ -8,6 +8,14 @@ from Quartz.CoreGraphics import CGEventPost
 from Quartz.CoreGraphics import kCGHIDEventTap
 from subprocess import Popen, PIPE
 
+"""
+
+SCRIPT "No More Timeout"
+Author: tbsx (tbsx (at) protonmail (dot) com)
+Realease-Date: 160918
+
+"""
+
 class Keyboard:
     # KEYCODES
     shiftChars = {
