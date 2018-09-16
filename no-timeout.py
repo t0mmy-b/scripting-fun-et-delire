@@ -15,7 +15,6 @@ Author: tbsx (tbsx (at) protonmail (dot) com)
 Realease-Date: 160918
 
 """
-
 class Keyboard:
     # KEYCODES
     shiftChars = {
@@ -218,7 +217,7 @@ class Keyboard:
         for key in text:
             self.KeyDown(key)
             self.KeyUp(key)
-            time.sleep(0.0001)
+            time.sleep(0.1)
 
 
 class Program:
@@ -233,15 +232,25 @@ class Program:
             tmp = str(getpass.getpass("Confirmation du mot de passe: "))
             if passwd != tmp:
                 print("Les mots de passe ne correspondent pas.")
+            verif = str(raw_input("Voulez-vous vérifier votre mot de passe ? [y/N] "))
+            if (verif == 'y' or verif == 'Y'):
+                print("Le mot de passe entré est: "+"\033[1;33;m"+passwd+"\033[0;32;m")
+                verif2 = str(raw_input("Ce mot de passe est-il correcte ? [Y/n] "))
+                if (verif2 == 'y' or verif2 == 'Y' or verif2 == None):
+                    pass
+                else:
+                    passwd = "1111"
+                    tmp = "0000"
         self.loop()
 
     def loop(self):
-        loopTime = random.randrange(1200,2100)
+        loopTime = 10#random.randrange(1200, 2100)
         while 1:
-            self.screenLock()
+            #self.screenLock()
             time.sleep(loopTime)
             self.screenUnlock(passwd)
             time.sleep(3)
+                
 
     def screenUnlock(self,passwd):
         Keyboard().KeyPress('\n')
