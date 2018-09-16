@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import time
+import getpass
 from Quartz.CoreGraphics import CGEventCreateKeyboardEvent
 from Quartz.CoreGraphics import CGEventPost
 from Quartz.CoreGraphics import kCGHIDEventTap
@@ -216,13 +217,13 @@ class Program:
         passwd = "1111"
         tmp = "0000"
         while passwd != tmp:
-            passwd = str(raw_input("Mot de passe du compte: "))
-            tmp = str(raw_input("Confirmation du mot de passe: "))
+            passwd = str(getpass.getpass("Mot de passe du compte: "))
+            tmp = str(getpass.getpass("Confirmation du mot de passe: "))
             if passwd != tmp:
                 print("Les mots de passe ne correspondent pas.")
-        #self.screenLock()
-        #time.sleep(5)
-        #self.screenUnlock(passwd)
+        self.screenLock()
+        time.sleep(5)
+        self.screenUnlock(passwd)
     def screenUnlock(self,passwd):
         Keyboard().KeyPress('\n')
         time.sleep(0.2)
