@@ -244,7 +244,7 @@ class Program:
         self.loop()
 
     def loop(self):
-        loopTime = 10#random.randrange(1200, 2100)
+        loopTime = 6#00
         while 1:
             #self.screenLock()
             time.sleep(loopTime)
@@ -258,6 +258,14 @@ class Program:
         Keyboard().Type(passwd)
         time.sleep(0.0001)
         Keyboard().KeyPress('\n')
+        self.eraseLine()
+    
+    def eraseLine(self):
+        Keyboard().KeyDown('cmd')
+        Keyboard().KeyDown('a')
+        Keyboard().KeyUp('cmd')
+        Keyboard().KeyUp('a')
+        Keyboard().KeyPress('delete')
 
 
     def screenLock(self):
