@@ -1,5 +1,6 @@
 import androidhelper
 import time
+import sys
 
 service = "bluetooth"
 droid = androidhelper.Android()
@@ -9,4 +10,7 @@ droid.dialogSetNegativeButtonText("Exit")
 
 ans = droid.dialogGetResponse()
 
-print(ans)
+if ans[1]['which'] == 'positive':
+    print("oui")
+else:
+    sys.exit(0)
