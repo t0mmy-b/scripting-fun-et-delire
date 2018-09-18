@@ -244,9 +244,9 @@ class Program:
         self.loop()
 
     def loop(self):
-        loopTime = 6#00
+        loopTime = 600
         while 1:
-            #self.screenLock()
+            self.screenLock()
             time.sleep(loopTime)
             self.screenUnlock(passwd)
             time.sleep(3)
